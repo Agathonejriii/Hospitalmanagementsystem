@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Top Bar */
+.top-bar {
+  background-color: #0A84FF;
+  color: white;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-bar-left,
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 44px;
+  width: auto;
+  border-radius: 6px;
+  cursor: default;
+  user-select: none;
+}
+
+.notifications-button,
+.logout-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.notifications-button:hover,
+.logout-button:hover {
+  color: #d1d1d1;
+}
+
+.notifications-icon,
+.logout-icon {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.2;
+}
+
+.admin-text {
+  user-select: none;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+/* Layout Containers */
+.admin-dashboard {
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+.dashboard-body {
+  display: flex;
+  background-color: rgba(10, 132, 255, 0.10);
+  min-height: calc(100vh - 64px);
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background-color: #0A84FF;
+  color: white;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 64px);
+  position: sticky;
+  top: 64px;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: rgba(10, 132, 255, 0.10);
+  overflow-y: auto;
+  max-height: calc(100vh - 64px);
+}
+
+/* Sidebar Menu */
+.sidebar-link {
+  display: block;
+  color: white !important;
+  text-decoration: none;
+  padding: 12px 15px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+.sidebar-link.active {
+  background-color: rgba(56, 178, 172, 0.85);
+  color: white;
+  font-weight: 700;
+}
+
+
+.sidebar-link:hover {
+  background-color: rgba(56, 178, 172, 0.85);
+}
+
+.menu-top li,
+.menu-bottom li {
+  background-color: rgba(56, 178, 172, 0.7);
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-top li:hover,
+.menu-bottom li:hover {
+  background-color: rgba(56, 178, 172, 0.85);
+}
+
+.menu-top li.active .sidebar-link {
+  background-color: rgba(56, 178, 172, 1);
+}
+
+/* Dashboard Cards & Components */
+.stats-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  margin-top: -20px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  color: #2c3e50;
+  min-width: 220px;
+  position: relative;
+}
+
+.card.chart-card h3,
+.department-scale-card h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.monthly-data-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.monthly-data-container h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: -30px;
+  color: white;
+  text-align: center;
+}
+
+/* Report Summary */
+.report-summary-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.report-summary-card .card-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.report-summary-card .card-body {
+  text-align: center;
+}
+
+.report-total {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0A84FF;
+}
+
+.report-change {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.report-change.positive {
+  color: #38B2AC;
+}
+
+.report-change.negative {
+  color: #e74c3c;
+}
+
+/* Bar Chart Styles */
+.recharts-bar-rectangle {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.recharts-bar-rectangle:hover {
+  opacity: 0.8;
+  transform: scaleY(1.05);
+}
+
+/* Department Scale Card */
+.scale-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.legend-box {
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.doctor-color {
+  background-color: #0A84FF;
+}
+
+.patient-color {
+  background-color: #38B2AC;
+}
+
+.department-bar {
+  margin-bottom: 18px;
+}
+
+.dept-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.scale-bar {
+  display: flex;
+  height: 12px;
+  background-color: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.scale-bar .doctors {
+  background-color: #0A84FF;
+  height: 100%;
+}
+
+.scale-bar .patients {
+  background-color: #38B2AC;
+  height: 100%;
+}
+
+.scale-numbers {
+  font-size: 12px;
+  margin-top: 4px;
+  color: #555;
+  text-align: center;
+}
+
+/* Pharmacy Details */
+.pharmacy-details-card {
+  font-size: 13px;
+  text-align: center;
+  user-select: none;
+}
+
+.pharmacy-details-card .dropdown-toggle {
+  cursor: pointer;
+  font-weight: 600;
+  margin: 0 6px;
+  color: #0A84FF;
+  display: inline-block;
+}
+
+.pharmacy-details-card .dropdown-toggle:hover {
+  text-decoration: underline;
+}
+
+.pharmacy-details-card .dropdown-list {
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: 6px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  max-height: 140px;
+  overflow-y: auto;
+  width: 180px;
+  right: 20px;
+  z-index: 10;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.pharmacy-details-card .dropdown-list li {
+  padding: 4px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.pharmacy-details-card .dropdown-list li:last-child {
+  border-bottom: none;
+}
+
+/* Settings Page */
+.settings-page,
+.support-page {
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.settings-page {
+  background-color: #007BFF;
+  color: white;
+}
+
+.settings-container {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: #2c3e50;
+}
+
+.settings-container h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #0A84FF;
+  text-align: center;
+}
+
+.settings-form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.settings-form input,
+.settings-form select {
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.settings-form fieldset {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.settings-form legend {
+  font-weight: 700;
+  padding: 0 6px;
+}
+
+.settings-form button.btn-save {
+  background-color: #0A84FF;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.settings-form button.btn-save:hover {
+  background-color: #0866cc;
+}
+
+/* Support Page */
+.support-page {
+  background-color: #007BFF;
+  color: #007BFF;
+}
+
+.support-page h1 {
+  margin-bottom: 20px;
+}
+
+.support-page ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.support-page ul li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .dashboard-body {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+  }
+
+  .dashboard-main {
+    max-height: none;
+  }
+
+  .stats-cards {
+    flex-direction: column;
+  }
+
+  .top-bar {
+    padding: 0 15px;
+    gap: 8px;
+    height: 64px;
+  }
+
+  .top-bar-left,
+  .top-bar-right {
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .profile-pic {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logout-icon,
+  .notifications-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .logo {
+    height: 36px;
+  }
+}
+

@@ -1,0 +1,152 @@
+/* AppointmentsPage.css */
+
+/* Basic page styling */
+.dashboard-content {
+  padding: 20px;
+  background-color: #f5f7fa; /* Light background for the page */
+}
+
+/* Header styles */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-left svg {
+  color: #98a09f;
+  font-size: 24px;
+}
+
+.header-total {
+  font-weight: bold;
+  font-size: 18px;
+  color: #1565c0;
+}
+
+.current-date,
+.current-time {
+  font-size: 16px;
+  color: #333;
+}
+
+.current-date {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.current-time {
+  font-weight: normal;
+}
+
+/* Form container */
+.form-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.form-group {
+  margin-right: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  padding: 5px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Add appointment button */
+.add-appointment-btn {
+  background-color: #2eb19f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-appointment-btn:hover {
+  background-color: darkgreen;
+}
+
+/* Table container */
+.table-container {
+  overflow-x: auto;
+}
+
+.scrollable-table {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+
+/* Table styling */
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.appointments-table th,
+.appointments-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.appointments-table th {
+  background-color: #00897b;
+  color: black; /* Changed to black */
+  font-weight: bold; /* Bold header text */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Highlight selected row with light blue */
+.appointments-table tr.selected {
+  background-color: #b3e5fc; /* Light Blue */
+}
+
+.appointments-table input,
+.appointments-table select {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .appointments-table th,
+  .appointments-table td {
+    font-size: 14px;
+  }
+}

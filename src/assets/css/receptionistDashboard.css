@@ -1,0 +1,700 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.top-bar {
+  background-color: #0A84FF;
+  color: white;
+  padding: 16px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;  /* LEFT & RIGHT sides separated */
+  align-items: center;
+  height: 64px;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* spacing between logo and bell */
+}
+
+.logo {
+  height: 40px;
+  cursor: pointer;
+}
+
+.notifications-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* CheckInOut Table Header Styling */
+.checkinout-table th {
+  background-color: #00897b; /* green matching staff logs */
+  color: white;
+  padding: 12px;
+  text-align: left;
+  position: sticky; /* keep header visible on scroll */
+  top: 0;
+  z-index: 1;
+  font-weight: 600;
+  user-select: none;
+}
+
+.checkinout-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Scrollable Table Container */
+.scrollable-table {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Optional: Highlight active day button */
+.day-buttons-container button.active {
+  background-color: #00796b;
+  color: white;
+}
+/* General body and text styling */
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+}
+
+/* Header Section Styling */
+.header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Date, Sort, and Search fields container */
+.date-sort-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px; /* spacing between date, sort, and search */
+}
+
+.date-sort-container span {
+  font-weight: 600;
+}
+
+.search-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-filter-container input {
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.date-sort-container select {
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Day buttons container */
+.day-buttons-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 15px;  /* Reduced gap between the search and day buttons */
+}
+
+.day-buttons-container button {
+  padding: 6px 10px;
+  background-color: #b2dfdb;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.day-buttons-container button.active {
+  background-color: #00796b;
+  color: white;
+}
+
+/* Table Section */
+.table-section {
+  margin-top: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.scrollable-table {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Styling the Action Button container */
+.action-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.action-button-container button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Adjusting spacing between elements */
+.header-section {
+  margin-bottom: 0px;
+}
+
+.search-filter-container input {
+  width: 220px; /* Reduced input width for better fit */
+}
+
+.date-sort-container {
+  gap: 15px; /* reduced gap between fields */
+}
+
+
+.logout-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-body {
+  display: flex;
+  min-height: calc(100vh - 64px);
+  position: relative;
+  background-color:  rgba(253, 254, 255, 0.2); /* Shared background */
+}
+
+.sidebar {
+  width: 220px;
+  background-color: rgba(95, 175, 255, 0.438);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  border-right: 1px solid #d9e8fa;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-button {
+  display:block;
+  width: 100%;
+  background-color: #38B2AC;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  border: seagreen;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:hover,
+.nav-button.active {
+  background-color: #2c9a96;
+}
+
+.support-register-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  margin-left: -15px;
+  flex-direction: column;
+  justify-content: space-between; /* Push cards to top, button to bottom */
+  padding: 30px;
+  background-color: rgba(10, 132, 255, 0.20);
+  min-height: calc(100vh - 64px);
+}
+
+.welcome-message {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: black;
+  background-color: white;
+  margin-bottom: 0px;
+  padding: 15px 10px;
+  border-radius: 8px;
+  user-select: none;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stats-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+}
+
+.card {
+  flex: 1 1 280px;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  color: #2c3e50;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.small-title {
+  font-size: 1rem;
+}
+
+.card-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0A84FF;
+  margin-top: 10px;
+}
+
+.card-subtext {
+  font-size: 1rem;
+  color: #2c3e50;
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+.card-change {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.card-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.change-text {
+  font-weight: 400;
+  margin-left: 5px;
+  color: #555;
+}
+
+.increase {
+  color: #2ecc71;
+}
+
+.decrease {
+  color: #e74c3c;
+}
+
+.pie-chart-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.checkin-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2c3e50;
+}
+
+.legend-color {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+}
+
+/* Register button wrapper positioned below main content on right side */
+.register-section-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -40px;
+  padding: 30px 0 0 0;
+  position: relative; /* Or remove 'position' entirely */
+}
+
+.register-btn {
+  background-color:#2eb19f;
+  color: white;
+  padding: 16px 50px;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: -30px;
+}
+
+.register-btn:hover {
+  background-color: darkgreen;
+}
+
+/* New styles for dropdown in NEW REGISTRATIONS card */
+.card-title-with-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+}
+
+.period-dropdown {
+  padding: 4px 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1.5px solid #0A84FF;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: white;
+  color: #0A84FF;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.period-dropdown:focus {
+  outline: none;
+  border-color: #38B2AC;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-body {
+    flex-direction: column;
+    position: static;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    min-height: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+  }
+
+  .dashboard-main {
+    padding: 20px;
+  }
+
+  .stats-cards {
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .register-section-wrapper {
+    position: static;
+    width: 100%;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  .pie-chart-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .checkin-legend {
+    flex-direction: row;
+    gap: 15px;
+  }
+}
+
+.checkinout-page {
+  padding: 20px;
+  background: #f5f7fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.date-sort-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.day-buttons-container {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.day-buttons-container button {
+  padding: 5px 10px;
+  background: #dfefff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.day-buttons-container button.active {
+  background: #007bff;
+  color: white;
+}
+
+.table-section {
+  margin-top: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.scrollable-table {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.scrollable-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scrollable-table th, 
+.scrollable-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.scrollable-table thead th {
+  position: sticky;
+  color: black;
+  top: 0;
+  background-color: #f0f0f0;
+  z-index: 1;
+}
+
+.action-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.action-button-container button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkinout-btn {
+  background-color: #2eb19f !important; /* Green color */
+  color: white !important;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  margin-right: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  right: 70px; /* Push the button to the right */
+  top: 150px; /* Adjust vertically (you can change this based on where you want it) */
+}
+
+.checkinout-btn:hover {
+  background-color: darkgreen !important; /* Darker green on hover */
+}
+
+
+
+button {
+  background-color: #00897b;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #006f5f;
+}
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: rgba(10, 132, 255, 0.20);
+  min-height: calc(100vh - 64px);
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-section-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 0 0;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: -10px;
+}
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.welcome-message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.role-select {
+  margin-top: -20px;
+}
+
+.register-btn {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 1px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #1f6390;
+}
+
+.clear-link {
+  color: green;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.clear-link:hover {
+  color: darkgreen;
+}
+

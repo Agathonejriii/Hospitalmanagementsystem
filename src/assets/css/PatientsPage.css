@@ -1,0 +1,188 @@
+/* Define the green color used for Add Appointment button */
+:root {
+  --appointment-green: #00897b;
+}
+
+/* Dashboard Content Styling */
+.dashboard-content {
+  margin-left: 0px;
+  padding: 20px;
+  max-width: 900px;
+}
+
+/* Table Styling */
+.patients-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Hover Effects for Table Row Inputs and Select */
+.patients-table tbody tr:hover input,
+.patients-table tbody tr:hover select {
+  background-color: transparent;
+}
+
+/* Table Header and Cells */
+.patients-table th,
+.patients-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+  background: white;
+}
+
+/* Table Inputs and Selects */
+.patients-table input,
+.patients-table select {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* Table Header with Green Background */
+.patients-table thead th {
+  background-color: var(--appointment-green);
+  color: white; /* White text on green for contrast */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-weight: 600;
+}
+
+/* Table Container Styling */
+.table-container,
+.table-wrapper {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.table-wrapper {
+  border-bottom: 1px solid #ccc;
+}
+
+.table-scroll {
+  max-height: 400px;
+  overflow-y: auto;
+}
+/* Hover effect for table rows */
+.patients-table tbody tr:hover {
+  background-color: #f1f8f6; /* Light green background on hover */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+/* Hover effect for edit icon */
+.edit-icon:hover {
+  color: var(--appointment-green);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+
+/* Form Container */
+.form-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+/* Add Patient Button Styling */
+.add-patient-btn {
+  background-color: var(--appointment-green);
+  border: 1px solid var(--appointment-green);
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin-top:30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
+}
+
+/* Add Patient Button Hover Effect */
+.add-patient-btn:hover {
+  background-color: #00695c; /* Darker shade of #00897b for hover */
+  border-color: #00695c;
+}
+
+
+/* Status Summary Card Styling */
+.status-summary-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f6f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Summary Item Styling */
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.summary-label {
+  color: #333;
+}
+
+.summary-value {
+  color: var(--appointment-green);
+  font-weight: bold;
+}
+
+.summary-date {
+  font-size: 14px;
+  color: #555;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Doctor Note Card Styling */
+.doctor-note-card {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+
+.doctor-note-card label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.doctor-note-card textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  resize: vertical;
+  box-sizing: border-box;
+}

@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 30px;
+  background-color: #0A84FF;
+  color: white;
+  height: 64px;
+}
+
+.top-bar-left, .top-bar-right {
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}}
+
+.profile-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.logo {
+  height: 30px;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+
+/* Main Layout */
+.dashboard-body {
+  display: flex;
+  background-color: rgba(10, 132, 255, 0.10);
+  min-height: calc(100vh - 64px);
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: rgba(95, 175, 255, 0.438);;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.menu-top,
+.menu-bottom {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sidebar Links */
+.sidebar ul.menu-top li a,
+.sidebar ul.menu-bottom li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 12px 15px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  background-color: rgba(56, 178, 172, 0.7);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+/* Hover and Active */
+.sidebar ul.menu-top li a:hover,
+.sidebar ul.menu-bottom li a:hover {
+  background-color: rgba(56, 178, 172, 0.85);
+  color: white;
+}
+
+.sidebar ul.menu-top li a.active {
+  background-color: rgba(56, 178, 172, 1);
+  color: white;
+}
+
+/* Remove default list item background and spacing */
+.menu-top li,
+.menu-bottom li {
+  margin: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  cursor: default;
+}
+
+/* Dashboard Content */
+.dashboard-main {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+/* Welcome Section */
+.welcome-section h2 {
+  font-size: 22px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Data & Chart Section */
+.data-chart-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  height: 170px;
+}
+
+.monthly-data-card,
+.bar-chart-card {
+  flex: 1;
+  height: 100%;
+  margin-top: -10px;
+}
+
+.monthly-data-card .card,
+.bar-chart-card .card {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* Card Titles */
+.card-title,
+.chart-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: rgba(10, 132, 255, 0.35);
+  padding: 4px 10px;
+  border-radius: 2px;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 8px auto;
+}
+
+/* Data Rows */
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.data-item {
+  flex: 1;
+  min-width: 100px;
+  background-color: rgba(10, 132, 255, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.label {
+  font-size: 12px;
+  color: #555;
+}
+
+.value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0A84FF;
+}
+
+/* Chart Wrapper */
+.chart-wrapper {
+  width: 100%;
+  height: 1100px; 
+}
+
+/* Appointments Table */
+.appointments-table {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+}
+
+.appointments-table h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #3498db;
+}
+
+.appointments-table table {
+  width: 100%;
+  border-collapse: collapse;
+  flex-grow: 1;
+  overflow-y: auto;
+  display: block;
+}
+
+.appointments-table thead,
+.appointments-table tbody {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.appointments-table th,
+.appointments-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.appointments-table th {
+  background-color: #f0f8ff;
+  color: #2c3e50;
+}
+
+.appointments-table tr:hover {
+  background-color: #4eb8d89d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    display: flex;
+    padding: 10px;
+    min-height: auto;
+  }
+
+  .menu-top,
+  .menu-bottom {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+  }
+
+  .dashboard-main {
+    padding: 20px;
+    height: auto;
+  }
+
+  .data-chart-container {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+
+  .monthly-data-card,
+  .bar-chart-card {
+    height: auto;
+  }
+
+  .appointments-table table {
+    display: block;
+  }
+}
+
+.data-chart-container {
+  display: flex;
+  gap: 30px; /* works when side by side */
+  flex-wrap: wrap;
+}
+
+.data-chart-container > div {
+  flex: 1;
+  min-width: 250px;
+}

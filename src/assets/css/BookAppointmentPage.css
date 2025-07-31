@@ -1,0 +1,106 @@
+/* General container for the entire book appointment page */
+.book-appointment-container {
+  padding: 20px;
+  background-color: #f9f9f9; /* Light gray background for the page */
+  min-height: 100vh;
+}
+
+.form-header {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+/* Section titles for "Personal Data" and "Appointment Details" */
+.section-header h3 {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+/* Form layout for better spacing */
+.appointment-form {
+  background-color: white;
+  width: 100%;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.clear-form {
+  text-decoration: underline;
+  justify-content: left;
+  color: #00897b;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.clear-form:hover {
+  color: #259bca;
+}
+
+
+/* Form fields styling */
+.form-group {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  margin-top: 20px;
+}
+
+/* Button styling */
+.submit-btn {
+  background-color: #3781bd;
+  color: white;
+  padding: 15px 30px;
+  justify-content: right;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-btn:hover {
+  background-color: #002a79;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:focus {
+  outline: none;
+}
